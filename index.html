@@ -347,9 +347,13 @@ header{
 .service-body a i{font-size:10px;transition:transform .2s;}
 .service-body a:hover i{transform:translateX(3px);}
 
+/* ============================================================
+   PRICING — With old table images
+   ============================================================ */
 .price-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:30px 24px;box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden;}
 .price-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--red);}
 .price-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);}
+.price-img{width:100%;height:120px;object-fit:contain;margin-bottom:12px;border-radius:8px;background:var(--off-white);padding:8px;}
 .price-tag{font-family:var(--ff-head);font-size:24px;color:var(--black);margin-bottom:5px;}
 .price-step{font-size:10.5px;letter-spacing:1.4px;color:var(--red);font-family:var(--ff-head);font-weight:600;margin-bottom:12px;}
 .price-card h3{font-size:18px;margin-bottom:9px;}
@@ -438,7 +442,20 @@ header{
 .stat-item .lbl{font-size:12.5px;color:#a8a8ae;letter-spacing:.2px;}
 
 /* ============================================================
-   TESTIMONIALS
+   OUR WORK / GALLERY — All 9 old table images with captions
+   ============================================================ */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.gallery-item{border-radius:var(--radius-sm);overflow:hidden;aspect-ratio:4/3;background:var(--off-white);position:relative;}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
+.gallery-item:hover img{transform:scale(1.04);}
+.gallery-item .overlay{
+  position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .3s;
+  display:flex;align-items:center;justify-content:center;color:var(--white);font-family:var(--ff-head);font-size:14px;font-weight:600;letter-spacing:.3px;text-align:center;padding:10px;
+}
+.gallery-item:hover .overlay{opacity:1;}
+
+/* ============================================================
+   TESTIMONIALS — Actual old testimonials + Accreditations
    ============================================================ */
 .testimonial-card{background:var(--white);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow-sm);border:1px solid var(--border);transition:transform .25s,box-shadow .25s;}
 .testimonial-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);}
@@ -448,6 +465,11 @@ header{
 .avatar{width:40px;height:40px;border-radius:50%;background:var(--black);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--ff-head);font-weight:600;flex-shrink:0;}
 .testimonial-author b{font-size:13.5px;}
 .testimonial-author span{font-size:11.5px;color:var(--gray);}
+
+/* Accreditation Cards */
+.accred-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px;}
+.accred-item{background:var(--white);border-radius:var(--radius-sm);padding:12px 16px;border:1px solid var(--border);display:flex;align-items:center;gap:10px;font-size:13px;color:var(--gray);}
+.accred-item i{color:var(--red);font-size:14px;width:20px;flex-shrink:0;}
 
 /* ============================================================
    BRANDS
@@ -530,8 +552,10 @@ footer ul a:hover{color:var(--red);}
   .process-track{grid-template-columns:repeat(2,1fr);row-gap:40px;}
   .process-track::before{display:none;}
   .grid-3{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
   .booking-wrap{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr 1fr;}
+  .accred-grid{grid-template-columns:1fr 1fr;}
 }
 @media(max-width:860px){
   /* Hide nav links on mobile, show hamburger */
@@ -650,6 +674,7 @@ footer ul a:hover{color:var(--red);}
   .grid-4{grid-template-columns:1fr;}
   .grid-3{grid-template-columns:1fr;}
   .grid-2{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr;}
   .why-list{grid-template-columns:1fr;}
   .stats-strip .grid-4{grid-template-columns:1fr 1fr;row-gap:26px;}
   .process-track{grid-template-columns:1fr;}
@@ -657,6 +682,7 @@ footer ul a:hover{color:var(--red);}
   .form-grid{grid-template-columns:1fr;}
   .cta-banner .container{flex-direction:column;align-items:flex-start;}
   .coverage-stats{grid-template-columns:1fr 1fr;}
+  .accred-grid{grid-template-columns:1fr;}
 }
 @media(max-width:480px){
   .container{padding:0 18px;}
@@ -708,10 +734,10 @@ footer ul a:hover{color:var(--red);}
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#areas">Coverage</a></li>
+          <li><a href="#gallery">Our Work</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#book">Contact</a></li>
         </ul>
-        <!-- Mobile drawer extra content will be injected by JS -->
       </nav>
 
       <!-- WhatsApp Button -->
@@ -743,6 +769,7 @@ footer ul a:hover{color:var(--red);}
     <li><a href="#services" style="display:block;padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.08);color:var(--white);font-size:15px;text-decoration:none;">Services</a></li>
     <li><a href="#about" style="display:block;padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.08);color:var(--white);font-size:15px;text-decoration:none;">About</a></li>
     <li><a href="#areas" style="display:block;padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.08);color:var(--white);font-size:15px;text-decoration:none;">Coverage</a></li>
+    <li><a href="#gallery" style="display:block;padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.08);color:var(--white);font-size:15px;text-decoration:none;">Our Work</a></li>
     <li><a href="#reviews" style="display:block;padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.08);color:var(--white);font-size:15px;text-decoration:none;">Reviews</a></li>
     <li><a href="#book" style="display:block;padding:14px 6px;border-bottom:1px solid rgba(255,255,255,.08);color:var(--white);font-size:15px;text-decoration:none;">Contact</a></li>
   </ul>
@@ -762,12 +789,13 @@ footer ul a:hover{color:var(--red);}
           <div class="mini-badge"><i class="fa-solid fa-shield-halved"></i> Gas Safe Registered</div>
           <div class="mini-badge"><i class="fa-solid fa-award"></i> OFTEC Registered</div>
         </div>
-        <h1>A Gas Leak or a Cold House<span>Can't Wait Neither Do We.</span></h1>
-        <p class="lead">Gas Safe and OFTEC registered engineers, on call 24 hours a day across the South West, for the jobs that genuinely can't wait.</p>
+        <h1>Fast Response Emergency<span>Plumbers &amp; Gas Engineers</span></h1>
+        <p class="lead">Gas Safe and OFTEC registered engineers, on call 24 hours a day across the South West. Same-day emergency response available in as little as 1 hour.</p>
         <ul class="hero-checklist">
-          <li><i class="fa-solid fa-check"></i> Gas Safe &amp; OFTEC registered checked, not just claimed</li>
+          <li><i class="fa-solid fa-check"></i> Gas Safe &amp; OFTEC registered — checked, not just claimed</li>
+          <li><i class="fa-solid fa-check"></i> Guaranteed 98% first time fix rate</li>
+          <li><i class="fa-solid fa-check"></i> Over 1,000 5-star reviews from satisfied customers</li>
           <li><i class="fa-solid fa-check"></i> Upfront, fixed pricing before we start any work</li>
-          <li><i class="fa-solid fa-check"></i> 1 hour average response for genuine emergencies</li>
         </ul>
         <div class="hero-btns">
           <a href="#services" class="btn btn-red">Our Services <i class="fa-solid fa-arrow-right"></i></a>
@@ -783,8 +811,8 @@ footer ul a:hover{color:var(--red);}
         <div class="frame">
           <img src="van-photo.jpg" alt="Pro Flame Gas Services engineer van on call">
           <div class="hero-float">
-            <div class="chip"><b>58 Min</b><span>Avg Response</span></div>
-            <div class="chip"><b>25 Yrs</b><span>Experience</span></div>
+            <div class="chip"><b>1 Hr</b><span>Emergency Response</span></div>
+            <div class="chip"><b>98%</b><span>First-Time Fix Rate</span></div>
           </div>
         </div>
       </div>
@@ -810,7 +838,7 @@ footer ul a:hover{color:var(--red);}
   <div class="container">
     <div>
       <h3>Smell Gas or Lost Your Heating?</h3>
-      <p>Every hour without a proper check is a risk not worth taking. Call now we're close by.</p>
+      <p>Every hour without a proper check is a risk not worth taking. Call now — we're close by.</p>
     </div>
     <a href="tel:07833722922" class="cta-call">
       <div class="cta-icon"><i class="fa-solid fa-phone"></i></div>
@@ -844,7 +872,7 @@ footer ul a:hover{color:var(--red);}
     <div class="section-head center fade-in visible">
       <div class="eyebrow center">Our Services</div>
       <h2 class="section-title">Complete Gas, Heating &amp; Plumbing Solutions</h2>
-      <p class="section-sub">One engineer, one van, everything sorted from a dripping tap to a full boiler replacement.</p>
+      <p class="section-sub">Covering all Oil, LPG &amp; Domestic Appliances — service, repair, safety checks and installs.</p>
     </div>
     <div class="grid-4">
       <div class="service-card fade-in visible">
@@ -869,7 +897,7 @@ footer ul a:hover{color:var(--red);}
       </div>
       <div class="service-card fade-in delay-2 visible">
         <div class="service-img"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="Landlord safety certificates" loading="lazy"><div class="service-icon"><i class="fa-solid fa-file-shield"></i></div></div>
-        <div class="service-body"><h4>Landlord Certificates</h4><p>CP12 certificates for landlords fast, reliable and fully compliant.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+        <div class="service-body"><h4>Landlord Certificates</h4><p>CP12 certificates for landlords — fast, reliable and fully compliant.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
       </div>
       <div class="service-card fade-in visible">
         <div class="service-img"><img src="https://images.unsplash.com/photo-1543487945-139a97f387d5?auto=format&fit=crop&w=500&q=80" alt="Gas fire installation" loading="lazy"><div class="service-icon"><i class="fa-solid fa-fire-flame-simple"></i></div></div>
@@ -880,11 +908,26 @@ footer ul a:hover{color:var(--red);}
         <div class="service-body"><h4>Powerflushing</h4><p>Improve your heating efficiency with our powerflushing service.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
       </div>
     </div>
+    <!-- Second row — Oil, LPG & Domestic Appliances -->
+    <div class="grid-4" style="margin-top:28px;">
+      <div class="service-card fade-in visible">
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=500&q=80" alt="Oil services" loading="lazy"><div class="service-icon"><i class="fa-solid fa-oil-can"></i></div></div>
+        <div class="service-body"><h4>Oil Services</h4><p>Service, repair, safety checks and installations for oil-fired systems.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+      <div class="service-card fade-in delay-1 visible">
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=500&q=80" alt="LPG services" loading="lazy"><div class="service-icon"><i class="fa-solid fa-gas-pump"></i></div></div>
+        <div class="service-body"><h4>LPG Services</h4><p>Expert LPG appliance installation, service, repair and safety checks.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+      <div class="service-card fade-in delay-2 visible">
+        <div class="service-img"><img src="https://images.unsplash.com/photo-1607472829116-2f0a8a4a5e14?auto=format&fit=crop&w=500&q=80" alt="Domestic appliances" loading="lazy"><div class="service-icon"><i class="fa-solid fa-house-chimney"></i></div></div>
+        <div class="service-body"><h4>Domestic Appliance Services</h4><p>Service, repair and safety checks for all domestic gas appliances.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ============================================================
-     PRICING
+     PRICING — With old table images
      ============================================================ -->
 <section class="bg-off divider" id="pricing">
   <div class="container">
@@ -895,32 +938,36 @@ footer ul a:hover{color:var(--red);}
     </div>
     <div class="grid-4">
       <div class="price-card fade-in visible">
-        <div class="price-tag">£130 inc VAT</div>
+        <img src="/pix/PipeLeak.png" alt="Emergency callout" class="price-img">
+        <div class="price-tag">£230 inc VAT</div>
         <div class="price-step">01 · Emergency</div>
         <h3>1 Hr / Same Day / 24 Hr</h3>
-        <p>Burst pipe, no heat, gas smell an engineer is on the way within the hour, day or night.</p>
-        <a href="#book">Book emergency callout <i class="fa-solid fa-arrow-right"></i></a>
+        <p>Burst pipe, no heat, gas smell — an engineer is on the way within the hour, day or night.</p>
+        <a href="#book">Book Emergency Callout <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="price-card fade-in delay-1 visible">
-        <div class="price-tag">£110 inc VAT</div>
+        <img src="/pix/Boiler18.png" alt="Next day service" class="price-img">
+        <div class="price-tag">£172 inc VAT</div>
         <div class="price-step">02 · Next Day</div>
         <h3>8AM – 8PM, 7 Days</h3>
         <p>Not urgent, but you don't want to wait a week. A fixed next-day slot, weekends included.</p>
-        <a href="#book">Book next-day response <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#book">Book Next Day Response <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="price-card fade-in delay-2 visible">
+        <img src="/pix/Hob1.jpg" alt="Routine service" class="price-img">
         <div class="price-tag">£95 inc VAT</div>
         <div class="price-step">03 · Routine</div>
         <h3>Annual Service &amp; Safety Check</h3>
         <p>A full safety check and service, scheduled within 3–5 days. Keeps your warranty valid.</p>
-        <a href="#book">Book a service <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#book">Book 3–5 Day Response <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="price-card fade-in visible">
+        <img src="/pix/Cylinder.jpg" alt="VIP OAP rates" class="price-img">
         <div class="price-tag">From £65 + VAT</div>
         <div class="price-step">04 · VIP / OAP</div>
         <h3>Landlord, VIP &amp; OAP Rates</h3>
         <p>Cylinder servicing and reduced-rate visits for VIP customers, landlords and OAPs.</p>
-        <a href="#book">Check eligibility <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#book">Book VIP/OAP Response <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
@@ -941,13 +988,14 @@ footer ul a:hover{color:var(--red);}
       </div>
       <div class="why-content fade-in delay-1 visible">
         <div class="eyebrow">Why Choose Us</div>
-        <h2 class="section-title">Because a Cold House Isn't a Risk Worth Taking</h2>
-        <p class="section-sub">Every engineer we send is Gas Safe registered and ID checked the same standard we'd want in our own home.</p>
+        <h2 class="section-title">Fast Response Emergency Plumbers &amp; Gas Engineers</h2>
+        <p class="section-sub">Guaranteed 98% first time fix rate with over 1,000 5-star reviews. Customer satisfaction is our priority from initial contact to final cleanup.</p>
         <div class="why-list">
           <div class="why-item"><div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div><div><h4>Fully Certified</h4><p>Gas Safe &amp; OFTEC registered on every visit.</p></div></div>
-          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-tags"></i></div><div><h4>No Hidden Fees</h4><p>The price we quote is the price you pay.</p></div></div>
-          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-bolt"></i></div><div><h4>1 Hour Response</h4><p>For genuine emergencies, day or night.</p></div></div>
-          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-award"></i></div><div><h4>Work Guaranteed</h4><p>A full 1 year warranty on all completed work.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-bolt"></i></div><div><h4>1 Hour Response</h4><p>Same-day emergency response for genuine emergencies.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-tags"></i></div><div><h4>Fixed Price Quotes</h4><p>Home survey and fixed-price quote before any work starts.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-award"></i></div><div><h4>1 Year Warranty</h4><p>Customer satisfaction guaranteed on all completed work.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-face-smile"></i></div><div><h4>We're Not Satisfied Until You Are</h4><p>Our team goes above and beyond to ensure every job exceeds expectations.</p></div></div>
         </div>
       </div>
     </div>
@@ -964,7 +1012,7 @@ footer ul a:hover{color:var(--red);}
       <h2 class="section-title">From Call to Fixed, in Four Steps</h2>
     </div>
     <div class="process-track">
-      <div class="process-step fade-in visible"><div class="process-num">1</div><h4>Call or Book Online</h4><p>Tell us what's wrong call, WhatsApp or fill in the form below.</p></div>
+      <div class="process-step fade-in visible"><div class="process-num">1</div><h4>Call or Book Online</h4><p>Tell us what's wrong — call, WhatsApp or fill in the form below.</p></div>
       <div class="process-step fade-in delay-1 visible"><div class="process-num">2</div><h4>Get a Fixed Price</h4><p>We confirm your slot and quote upfront, before any work starts.</p></div>
       <div class="process-step fade-in delay-2 visible"><div class="process-num">3</div><h4>Engineer Arrives</h4><p>A Gas Safe registered engineer arrives in your chosen window.</p></div>
       <div class="process-step fade-in visible"><div class="process-num">4</div><h4>Job Done &amp; Guaranteed</h4><p>Work completed, tested, and backed by a 1 year warranty.</p></div>
@@ -984,12 +1032,13 @@ footer ul a:hover{color:var(--red);}
       </div>
       <div class="about-content fade-in delay-1 visible">
         <div class="eyebrow">About Us</div>
-        <h2 class="section-title">Your Local Gas &amp; Plumbing Experts</h2>
-        <p class="section-sub">Pro Flame Gas Services is a trusted local business with years of experience in the heating, plumbing and gas industry. We pride ourselves on delivering safe, reliable and high-quality workmanship the kind you'd be happy to recommend to a neighbour.</p>
+        <h2 class="section-title">Customer Satisfaction Guaranteed</h2>
+        <p class="section-sub">Pro Flame Gas Services is a trusted local business with years of experience in the heating, plumbing and gas industry. We pride ourselves on delivering safe, reliable and high-quality workmanship — the kind you'd be happy to recommend to a neighbour.</p>
         <ul class="about-checklist">
           <li><i class="fa-solid fa-check"></i> Fully Qualified &amp; Insured Engineers</li>
-          <li><i class="fa-solid fa-check"></i> Workmanship Guaranteed for 1 Year</li>
-          <li><i class="fa-solid fa-check"></i> Customer Satisfaction Our Priority</li>
+          <li><i class="fa-solid fa-check"></i> 1 Year Warranty on All Works Completed</li>
+          <li><i class="fa-solid fa-check"></i> Customer Satisfaction Guaranteed</li>
+          <li><i class="fa-solid fa-check"></i> We're Not Satisfied Until You Are</li>
         </ul>
         <div class="about-btns">
           <a href="#book" class="btn btn-red">Get a Free Quote</a>
@@ -1001,15 +1050,15 @@ footer ul a:hover{color:var(--red);}
 </section>
 
 <!-- ============================================================
-     COVERAGE AREA
+     COVERAGE
      ============================================================ -->
 <section class="bg-black" id="areas">
   <div class="container">
     <div class="coverage-grid">
       <div class="coverage-text fade-in visible">
         <div class="eyebrow light">Areas We Cover</div>
-        <h2 class="section-title light">Based on the M4 / M5 Interchange, Covering the Whole South West</h2>
-        <p class="lead">Our Filton HQ sits right on the interchange, which means we're rarely far from wherever you are.</p>
+        <h2 class="section-title light">Based in Filton by the M5/M4 Interchange</h2>
+        <p class="lead">Covering the whole South West with Gas Safe registered engineers. We offer home surveys and fixed-price quotes before any work starts.</p>
         <div class="area-tags">
           <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Bristol</div>
           <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Bath</div>
@@ -1018,16 +1067,16 @@ footer ul a:hover{color:var(--red);}
           <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Swindon</div>
           <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Weston-super-Mare</div>
         </div>
-        <a href="#book" class="btn btn-red">Check My Postcode <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="#book" class="btn btn-red">Get a Fixed Price Quote <i class="fa-solid fa-arrow-right"></i></a>
       </div>
       <div class="coverage-map fade-in delay-1 visible">
         <i class="fa-solid fa-map-location-dot"></i>
         <h3>South West Coverage</h3>
         <p>Emergency, next-day and routine appointments across the region.</p>
         <div class="coverage-stats">
-          <div><b>60 Min</b><span>Avg Arrival</span></div>
+          <div><b>M4 / M5</b><span>Filton HQ</span></div>
           <div><b>7 Days</b><span>A Week</span></div>
-          <div><b>25 Yrs</b><span>Local Experience</span></div>
+          <div><b>1 Hr</b><span>Emergency Response</span></div>
           <div><b>100%</b><span>Gas Safe Checked</span></div>
         </div>
       </div>
@@ -1042,17 +1091,68 @@ footer ul a:hover{color:var(--red);}
   <div class="container">
     <div class="grid-4">
       <div class="stat-item fade-in visible"><i class="fa-solid fa-star"></i><span class="num" data-count="1000" data-suffix="+">0</span><div class="lbl">5-Star Reviews</div></div>
-      <div class="stat-item fade-in delay-1 visible"><i class="fa-solid fa-thumbs-up"></i><span class="num" data-count="98" data-suffix="%">0</span><div class="lbl">First-Time Fix</div></div>
+      <div class="stat-item fade-in delay-1 visible"><i class="fa-solid fa-thumbs-up"></i><span class="num" data-count="98" data-suffix="%">0</span><div class="lbl">First-Time Fix Rate</div></div>
       <div class="stat-item fade-in delay-2 visible"><i class="fa-solid fa-shield"></i><span class="num" data-count="1" data-suffix="Yr">0</span><div class="lbl">Warranty On All Work</div></div>
-      <div class="stat-item fade-in visible"><i class="fa-solid fa-fire-flame-curved"></i><span class="num" data-count="25" data-suffix="Yrs">0</span><div class="lbl">Plumbing Experience</div></div>
+      <div class="stat-item fade-in visible"><i class="fa-solid fa-fire-flame-curved"></i><span class="num" data-count="25" data-suffix="Yrs">0</span><div class="lbl">Industry Experience</div></div>
     </div>
   </div>
 </div>
 
 <!-- ============================================================
-     TESTIMONIALS
+     OUR WORK / GALLERY — All 9 old table images with captions
      ============================================================ -->
-<section id="reviews" class="bg-off">
+<section id="gallery" class="bg-off divider">
+  <div class="container">
+    <div class="section-head center fade-in visible">
+      <div class="eyebrow center">Our Work</div>
+      <h2 class="section-title">Testimonials, About Us &amp; Our Work</h2>
+      <p class="section-sub">Take a look at some of our recent installations and repairs across the South West.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item fade-in visible">
+        <img src="pix/Boiler01a.jpg" alt="New Install in Highbridge TA8" loading="lazy">
+        <div class="overlay">New Install in Highbridge TA8</div>
+      </div>
+      <div class="gallery-item fade-in delay-1 visible">
+        <img src="pix/Boiler02.jpg" alt="Fault Finding in Gloucester GL4" loading="lazy">
+        <div class="overlay">Fault Finding in Gloucester GL4</div>
+      </div>
+      <div class="gallery-item fade-in delay-2 visible">
+        <img src="pix/Boiler03.jpg" alt="Upgrade Boiler In Swindon SN12" loading="lazy">
+        <div class="overlay">Upgrade Boiler In Swindon SN12</div>
+      </div>
+      <div class="gallery-item fade-in visible">
+        <img src="pix/Boiler04.jpg" alt="Boiler Service in a Church in BA2" loading="lazy">
+        <div class="overlay">Boiler Service in a Church in BA2</div>
+      </div>
+      <div class="gallery-item fade-in delay-1 visible">
+        <img src="pix/Boiler05.jpg" alt="Boiler Repair in Yeovil BA4" loading="lazy">
+        <div class="overlay">Boiler Repair in Yeovil BA4</div>
+      </div>
+      <div class="gallery-item fade-in delay-2 visible">
+        <img src="pix/Boiler09.jpg" alt="Boiler swap in Bristol BS5" loading="lazy">
+        <div class="overlay">Boiler swap in Bristol BS5</div>
+      </div>
+      <div class="gallery-item fade-in visible">
+        <img src="pix/Hob inst1.jpg" alt="Hob Install in BA22" loading="lazy">
+        <div class="overlay">Hob Install in BA22</div>
+      </div>
+      <div class="gallery-item fade-in delay-1 visible">
+        <img src="pix/Fire01.jpg" alt="Safety Check in Dundry BS14" loading="lazy">
+        <div class="overlay">Safety Check in Dundry BS14</div>
+      </div>
+      <div class="gallery-item fade-in delay-2 visible">
+        <img src="pix/Cooker01.png" alt="Cooker install in Bristol BS34" loading="lazy">
+        <div class="overlay">Cooker install in Bristol BS34</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS + ACCREDITATIONS + CONTACT INFO (old table exact)
+     ============================================================ -->
+<section id="reviews" class="bg-white">
   <div class="container">
     <div class="section-head center fade-in visible">
       <div class="eyebrow center">Trusted by Our Customers</div>
@@ -1061,19 +1161,60 @@ footer ul a:hover{color:var(--red);}
     <div class="grid-3">
       <div class="testimonial-card fade-in visible">
         <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p>"Brilliant service! Our boiler broke down late at night and Pro Flame came out straight away. Highly recommend."</p>
-        <div class="testimonial-author"><div class="avatar">S</div><div><b>Sarah J.</b><br><span>Homeowner</span></div></div>
+        <p>"Great service, Highly recommended."</p>
+        <div class="testimonial-author"><div class="avatar">A</div><div><b>Alan</b><br><span>Swindon</span></div></div>
       </div>
       <div class="testimonial-card fade-in delay-1 visible">
         <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p>"Professional, punctual and tidy work. They installed our new boiler quickly and explained everything."</p>
-        <div class="testimonial-author"><div class="avatar">M</div><div><b>Mark R.</b><br><span>Homeowner</span></div></div>
+        <p>"Five Stars, First Class."</p>
+        <div class="testimonial-author"><div class="avatar">D</div><div><b>Dave</b><br><span>Taunton</span></div></div>
       </div>
       <div class="testimonial-card fade-in delay-2 visible">
         <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p>"Reliable engineers and great prices. We use them for all our landlord certificates."</p>
-        <div class="testimonial-author"><div class="avatar">D</div><div><b>David L.</b><br><span>Landlord</span></div></div>
+        <p>"Reliable, Professional."</p>
+        <div class="testimonial-author"><div class="avatar">S</div><div><b>Sue</b><br><span>Corsham</span></div></div>
       </div>
+      <div class="testimonial-card fade-in visible">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Friendly, reasonably priced."</p>
+        <div class="testimonial-author"><div class="avatar">J</div><div><b>Jane</b><br><span>Kingswood</span></div></div>
+      </div>
+      <div class="testimonial-card fade-in delay-1 visible">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Quick response and punctual."</p>
+        <div class="testimonial-author"><div class="avatar">B</div><div><b>Beverly</b><br><span>Gloucester</span></div></div>
+      </div>
+    </div>
+
+    <!-- Accreditations from old table -->
+    <div class="section-head center fade-in visible" style="margin-top:56px;">
+      <div class="eyebrow center">Accreditations</div>
+      <h2 class="section-title">Our Qualifications &amp; Accreditations</h2>
+    </div>
+    <div class="accred-grid fade-in visible">
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> Worcester Bosch Trained and Approved</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> Vaillant Accredited Installer</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> LPG Qualified</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> Social Housing Experience</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> Letting/Estate Agent Contractor</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> CRB Checked Engineers</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> Gas Safe Registered Oil Technicians</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> OFTEC Registered</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> Ex British Gas</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> Waste Carriers License</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> 25 Yrs Plumbing Experience</div>
+      <div class="accred-item"><i class="fa-solid fa-check-circle"></i> VAT Registration No: 86445775</div>
+    </div>
+
+    <!-- Contact details from old table -->
+    <div class="section-head center fade-in visible" style="margin-top:48px;">
+      <div class="eyebrow center">Contact Us</div>
+      <h2 class="section-title">Get in Touch</h2>
+    </div>
+    <div class="grid-3 fade-in visible" style="text-align:center;padding:20px 0;">
+      <div><i class="fa-solid fa-envelope" style="font-size:28px;color:var(--red);"></i><br><strong>Email</strong><br>info@proflamegas.co.uk<br>admin@proflamegas.co.uk</div>
+      <div><i class="fa-solid fa-phone" style="font-size:28px;color:var(--red);"></i><br><strong>Call / Txt / WhatsApp</strong><br>07833 722922</div>
+      <div><i class="fa-solid fa-file-invoice" style="font-size:28px;color:var(--red);"></i><br><strong>VAT Registration</strong><br>86445775</div>
     </div>
   </div>
 </section>
@@ -1081,7 +1222,7 @@ footer ul a:hover{color:var(--red);}
 <!-- ============================================================
      BRANDS
      ============================================================ -->
-<div class="brands bg-white divider" style="padding:40px 0;border-bottom:1px solid var(--border);">
+<div class="brands bg-off divider" style="padding:40px 0;border-bottom:1px solid var(--border);">
   <div class="container">
     <div class="brands-row fade-in visible">
       <div class="brand-logo"><i class="fa-solid fa-fire"></i>WORCESTER</div>
@@ -1105,11 +1246,11 @@ footer ul a:hover{color:var(--red);}
     <div class="faq-wrap">
       <div class="faq-item fade-in visible open">
         <div class="faq-q">How fast can an engineer actually get to me? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a"><p>For genuine emergencies no heat, no hot water, a suspected gas leak our average arrival time is under 60 minutes, 24 hours a day. Next-day and routine visits are booked to a fixed window so you're never left guessing.</p></div>
+        <div class="faq-a"><p>For genuine emergencies — no heat, no hot water, a suspected gas leak — our average arrival time is under 60 minutes, 24 hours a day. Next-day and routine visits are booked to a fixed window so you're never left guessing.</p></div>
       </div>
       <div class="faq-item fade-in visible">
         <div class="faq-q">Will I know the price before you start? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a"><p>Yes. Every job is quoted upfront based on the response tier you choose, before any work begins. There are no surprise call-out fees added afterwards.</p></div>
+        <div class="faq-a"><p>Yes. Every job is quoted upfront based on the response tier you choose, before any work begins. We offer home surveys and fixed-price quotes. There are no surprise call-out fees added afterwards.</p></div>
       </div>
       <div class="faq-item fade-in visible">
         <div class="faq-q">Are your engineers actually Gas Safe registered? <i class="fa-solid fa-plus"></i></div>
@@ -1117,11 +1258,11 @@ footer ul a:hover{color:var(--red);}
       </div>
       <div class="faq-item fade-in visible">
         <div class="faq-q">Do you offer reduced rates for landlords or OAPs? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a"><p>Yes we offer VIP and OAP rates from £65+VAT, along with landlord safety certificates (CP12) and cylinder servicing at a reduced rate. Ask when you book.</p></div>
+        <div class="faq-a"><p>Yes — we offer VIP and OAP rates from £65+VAT, along with landlord safety certificates (CP12) and cylinder servicing at a reduced rate. Ask when you book.</p></div>
       </div>
       <div class="faq-item fade-in visible">
         <div class="faq-q">What if I'm not satisfied with the work? <i class="fa-solid fa-plus"></i></div>
-        <div class="faq-a"><p>All completed work is backed by a 1 year warranty. If something isn't right, call us and we'll come back to put it right at no extra cost.</p></div>
+        <div class="faq-a"><p>All completed work is backed by a 1 year warranty. Customer satisfaction is guaranteed — if something isn't right, call us and we'll come back to put it right at no extra cost.</p></div>
       </div>
     </div>
   </div>
@@ -1169,6 +1310,9 @@ footer ul a:hover{color:var(--red);}
               <option>Landlord Safety Certificate</option>
               <option>Gas Fire Installation</option>
               <option>Powerflushing</option>
+              <option>Oil Service</option>
+              <option>LPG Service</option>
+              <option>Domestic Appliance Service</option>
             </select>
           </div>
           <div class="form-field">
@@ -1179,7 +1323,7 @@ footer ul a:hover{color:var(--red);}
           <div class="form-field"><label>Appliance Model</label><input type="text" name="model" placeholder="Greenstar, EcoTec, DuoTec..."></div>
           <div class="form-field full"><label>Description of Fault (if faulty)</label><textarea name="fault" placeholder="No hot water, F75 fault code etc."></textarea></div>
           <div class="form-submit"><button type="submit" class="btn btn-red btn-block">Submit Query / Book Appointment <i class="fa-solid fa-arrow-right"></i></button></div>
-          <div class="form-msg" id="formMsg"><i class="fa-solid fa-circle-check"></i> Thanks your request has been noted. We'll call you shortly to confirm.</div>
+          <div class="form-msg" id="formMsg"><i class="fa-solid fa-circle-check"></i> Thanks — your request has been noted. We'll call you shortly to confirm.</div>
         </div>
       </form>
     </div>
@@ -1210,7 +1354,7 @@ footer ul a:hover{color:var(--red);}
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="logo-banner.jpg" alt="Pro Flame Gas Services" style="height:38px;margin-bottom:15px;">
-        <p>Providing professional gas, heating and plumbing services that you can rely on, day or night, across the South West.</p>
+        <p>Providing professional gas, heating and plumbing services that you can rely on, day or night, across the South West. Customer satisfaction guaranteed.</p>
         <div class="socials">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -1224,6 +1368,7 @@ footer ul a:hover{color:var(--red);}
           <li><a href="#about">About Us</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#areas">Areas We Cover</a></li>
+          <li><a href="#gallery">Our Work</a></li>
           <li><a href="#reviews">Reviews</a></li>
           <li><a href="#book">Contact Us</a></li>
         </ul>
@@ -1237,6 +1382,8 @@ footer ul a:hover{color:var(--red);}
           <li><a href="#services">Plumbing Services</a></li>
           <li><a href="#services">Landlord Certificates</a></li>
           <li><a href="#services">Powerflushing</a></li>
+          <li><a href="#services">Oil &amp; LPG Services</a></li>
+          <li><a href="#services">Domestic Appliances</a></li>
         </ul>
       </div>
       <div>
@@ -1246,6 +1393,7 @@ footer ul a:hover{color:var(--red);}
           <li><i class="fa-solid fa-envelope"></i> info@proflamegas.co.uk</li>
           <li><i class="fa-solid fa-location-dot"></i> Filton, South West</li>
           <li><i class="fa-solid fa-clock"></i> 24/7 Emergency Service</li>
+          <li><i class="fa-solid fa-file-invoice"></i> VAT: 86445775</li>
         </ul>
       </div>
     </div>
@@ -1367,8 +1515,8 @@ bookingForm.addEventListener('submit', function (e) {
 document.querySelectorAll('img').forEach((img, i) => {
   img.addEventListener('error', function handler() {
     img.removeEventListener('error', handler);
-    if (img.src.includes('unsplash.com')) {
-      img.src = `https://picsum.photos/seed/proflame${i}/500/400`;
+    if (img.src.includes('unsplash.com') || img.src.includes('picsum') || img.src.includes('pix/')) {
+      // already handled
     }
   }, { once: true });
 });
