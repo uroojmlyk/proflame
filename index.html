@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Flame Gas Services | Gas Safe Registered Engineers — South West</title>
+<meta name="description" content="Pro Flame Gas Services — Gas Safe registered boiler, heating, plumbing and gas engineers covering the South West. 24/7 emergency callout, 1 hour response.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ============================================================
+   PRO FLAME GAS SERVICES — DESIGN TOKENS
+   ============================================================ */
+:root{
+  --navy:#0a1128;
+  --navy-2:#101d40;
+  --navy-3:#16275a;
+  --blue:#1d6fe0;
+  --blue-light:#4fb8ff;
+  --red:#e0262b;
+  --red-dark:#a8171b;
+  --gold:#f5b400;
+  --white:#ffffff;
+  --off-white:#f4f6fb;
+  --ink:#0a1128;
+  --gray:#5b6478;
+  --gray-light:#8b93a7;
+  --border:#e4e7f2;
+  --radius:16px;
+  --radius-sm:10px;
+  --shadow-sm:0 4px 16px rgba(10,17,40,0.08);
+  --shadow-md:0 14px 36px rgba(10,17,40,0.14);
+  --shadow-lg:0 24px 60px rgba(10,17,40,0.22);
+  --ff-head:'Oswald',sans-serif;
+  --ff-body:'Work Sans',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--ff-body);
+  color:var(--ink);
+  background:var(--white);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;}
+.container{max-width:1240px;margin:0 auto;padding:0 24px;}
+h1,h2,h3,h4{font-family:var(--ff-head);font-weight:600;letter-spacing:0.3px;color:var(--navy);}
+section{position:relative;}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+:focus-visible{outline:3px solid var(--blue-light);outline-offset:3px;}
+
+/* Eyebrow / small labels */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--ff-head);font-size:13px;font-weight:600;letter-spacing:2px;
+  color:var(--red);text-transform:uppercase;margin-bottom:12px;
+}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--red);display:inline-block;}
+.eyebrow.center{justify-content:center;}
+.eyebrow.center::before{display:none;}
+.section-head{max-width:680px;margin-bottom:52px;}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+.section-title{font-size:clamp(28px,3.6vw,42px);line-height:1.15;}
+.section-sub{color:var(--gray);font-size:16px;margin-top:14px;}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 30px;border-radius:50px;font-family:var(--ff-head);
+  font-weight:600;font-size:15px;letter-spacing:0.4px;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  white-space:nowrap;
+}
+.btn i{font-size:13px;}
+.btn-red{background:var(--red);color:var(--white);box-shadow:0 10px 24px rgba(224,38,43,0.32);}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-3px);box-shadow:0 16px 30px rgba(224,38,43,0.4);}
+.btn-navy{background:var(--navy);color:var(--white);}
+.btn-navy:hover{background:var(--navy-3);transform:translateY(-3px);}
+.btn-outline{border:2px solid var(--navy);color:var(--navy);background:transparent;padding:13px 28px;}
+.btn-outline:hover{background:var(--navy);color:var(--white);transform:translateY(-3px);}
+.btn-outline-white{border:2px solid rgba(255,255,255,.5);color:var(--white);padding:13px 28px;}
+.btn-outline-white:hover{background:var(--white);color:var(--navy);border-color:var(--white);}
+.btn-block{width:100%;}
+.btn-sm{padding:11px 22px;font-size:13px;}
+
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+.topbar{background:var(--navy);color:#c7cee6;font-size:13px;padding:9px 0;}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.topbar-row{display:flex;gap:26px;flex-wrap:wrap;}
+.topbar-item{display:flex;align-items:center;gap:7px;}
+.topbar-item i{color:var(--blue-light);font-size:12px;}
+.topbar .stars i{color:var(--gold);font-size:11px;}
+.topbar-socials{display:flex;gap:14px;}
+.topbar-socials a{color:#c7cee6;font-size:13px;transition:color .2s;}
+.topbar-socials a:hover{color:var(--blue-light);}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header{position:sticky;top:0;z-index:200;background:var(--white);box-shadow:var(--shadow-sm);transition:box-shadow .3s;}
+.navwrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;gap:20px;}
+.logo{display:flex;align-items:center;}
+.logo img{height:46px;width:auto;}
+.mainnav ul{display:flex;gap:34px;}
+.mainnav a{font-family:var(--ff-head);font-weight:500;font-size:15px;color:var(--navy);position:relative;padding:6px 0;}
+.mainnav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--red);transition:width .25s;}
+.mainnav a:hover::after{width:100%;}
+.header-right{display:flex;align-items:center;gap:18px;}
+.header-cta{display:flex;align-items:center;gap:12px;}
+.pulse-icon{
+  width:44px;height:44px;border-radius:50%;background:var(--red);color:var(--white);
+  display:flex;align-items:center;justify-content:center;font-size:16px;position:relative;flex-shrink:0;
+}
+.pulse-icon::before{
+  content:"";position:absolute;inset:0;border-radius:50%;background:var(--red);
+  animation:pulse 2s infinite; z-index:-1;
+}
+@keyframes pulse{0%{transform:scale(1);opacity:.55;}100%{transform:scale(1.9);opacity:0;}}
+.header-cta .txt b{display:block;font-family:var(--ff-head);font-size:16px;color:var(--navy);}
+.header-cta .txt span{font-size:12px;color:var(--gray);}
+.menu-toggle{display:none;font-size:22px;color:var(--navy);width:42px;height:42px;align-items:center;justify-content:center;border-radius:8px;}
+.menu-toggle:hover{background:var(--off-white);}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  padding:76px 0 0;
+  background:radial-gradient(1100px 600px at 85% -10%, #12275e 0%, var(--navy) 55%, var(--navy) 100%);
+  color:var(--white);overflow:hidden;position:relative;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(circle at 18% 30%, rgba(29,111,224,.18), transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(224,38,43,.14), transparent 45%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;position:relative;z-index:1;}
+.hero-badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+.mini-badge{
+  display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.16);padding:7px 14px;border-radius:50px;font-size:12.5px;
+  font-family:var(--ff-head);letter-spacing:.5px;text-transform:uppercase;
+}
+.mini-badge i{color:var(--blue-light);}
+.hero h1{font-size:clamp(34px,4.6vw,58px);line-height:1.08;color:var(--white);margin-bottom:20px;}
+.hero h1 span{display:block;color:var(--blue-light);}
+.hero p.lead{font-size:17px;color:#c7cee6;max-width:520px;margin-bottom:28px;}
+.hero-checklist{display:flex;flex-direction:column;gap:12px;margin-bottom:34px;}
+.hero-checklist li{display:flex;align-items:center;gap:10px;font-size:15px;color:#dfe4f4;}
+.hero-checklist i{width:22px;height:22px;border-radius:50%;background:rgba(79,184,255,.18);color:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+
+.hero-visual{position:relative;display:flex;justify-content:center;}
+.hero-card{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius);padding:26px;backdrop-filter:blur(6px);width:100%;max-width:420px;
+}
+.hero-card img{border-radius:var(--radius-sm);width:100%;background:#fff;padding:18px;}
+.gas-safe-float{
+  position:absolute;top:-18px;right:-14px;background:var(--gold);color:var(--navy);
+  width:88px;height:88px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-md);border:4px solid var(--navy);text-align:center;
+}
+.gas-safe-float img{width:44px;background:transparent;padding:0;}
+.gas-safe-float span{font-size:8px;font-family:var(--ff-head);font-weight:700;letter-spacing:1px;margin-top:2px;}
+
+.dial-row{display:flex;gap:14px;margin-top:18px;}
+.dial-box{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-sm);padding:16px;text-align:center;}
+.dial-box b{display:block;font-family:var(--ff-head);font-size:22px;color:var(--blue-light);}
+.dial-box span{font-size:11px;color:#aab3cf;letter-spacing:.5px;text-transform:uppercase;}
+
+/* info strip under hero */
+.info-strip{background:var(--white);margin-top:56px;box-shadow:0 -1px 0 rgba(255,255,255,.06) inset;}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.info-item{
+  display:flex;align-items:center;gap:14px;padding:26px 22px;border-right:1px solid var(--border);
+}
+.info-item:last-child{border-right:none;}
+.info-icon{
+  width:48px;height:48px;border-radius:50%;background:var(--off-white);color:var(--red);
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;
+}
+.info-item b{display:block;font-family:var(--ff-head);font-size:19px;}
+.info-item span{font-size:12px;color:var(--gray);letter-spacing:.4px;}
+
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+.cta-banner{
+  background:linear-gradient(100deg,var(--red) 0%,var(--red-dark) 100%);color:var(--white);
+}
+.cta-banner .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-top:26px;padding-bottom:26px;}
+.cta-banner h3{color:var(--white);font-size:22px;}
+.cta-banner p{opacity:.9;font-size:14px;margin-top:4px;}
+.cta-call{display:flex;align-items:center;gap:14px;background:rgba(0,0,0,.18);padding:10px 22px 10px 10px;border-radius:50px;}
+.cta-call .pulse-icon{background:var(--white);color:var(--red);}
+.cta-call .pulse-icon::before{background:var(--white);}
+.cta-call b{display:block;font-family:var(--ff-head);font-size:17px;}
+.cta-call span{font-size:12px;opacity:.85;}
+
+/* ============================================================
+   TRUST / CERTIFICATION STRIP
+   ============================================================ */
+.trust-strip{background:var(--off-white);padding:44px 0;}
+.trust-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:28px;}
+.trust-label{font-family:var(--ff-head);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);}
+.trust-logos{display:flex;align-items:center;gap:34px;flex-wrap:wrap;}
+.trust-logos img{height:58px;width:auto;filter:grayscale(0%);}
+.trust-logos .t-item{display:flex;align-items:center;gap:10px;background:var(--white);padding:8px 16px;border-radius:50px;box-shadow:var(--shadow-sm);}
+.trust-logos .t-item span{font-family:var(--ff-head);font-size:12.5px;font-weight:600;color:var(--navy);}
+
+/* ============================================================
+   PRICING / RESPONSE TIERS
+   ============================================================ */
+.pricing{padding:100px 0 90px;background:var(--white);}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.price-card{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--radius);
+  padding:32px 26px;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;
+}
+.price-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--blue),var(--blue-light));}
+.price-card.featured::before{background:linear-gradient(90deg,var(--red),var(--red-dark));}
+.price-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);}
+.price-tag{font-family:var(--ff-head);font-size:26px;color:var(--red);margin-bottom:6px;}
+.price-card.featured .price-tag{color:var(--red);}
+.price-step{font-size:11px;letter-spacing:1.5px;color:var(--blue);font-family:var(--ff-head);font-weight:600;margin-bottom:14px;}
+.price-card h3{font-size:19px;margin-bottom:10px;}
+.price-card p{color:var(--gray);font-size:14px;margin-bottom:20px;min-height:66px;}
+.price-card a{font-family:var(--ff-head);font-size:13.5px;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:8px;}
+.price-card a i{font-size:11px;transition:transform .2s;}
+.price-card a:hover i{transform:translateX(4px);}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services{padding:90px 0;background:var(--off-white);}
+.services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.service-card{
+  background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);
+  transition:transform .3s,box-shadow .3s;
+}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.service-img{position:relative;height:150px;background:linear-gradient(135deg,var(--navy),var(--navy-3));display:flex;align-items:center;justify-content:center;}
+.service-img i{font-size:44px;color:rgba(255,255,255,.9);}
+.service-body{padding:22px 20px 24px;}
+.service-body h4{font-size:17px;margin-bottom:8px;}
+.service-body p{color:var(--gray);font-size:13.5px;margin-bottom:14px;}
+.service-body a{font-family:var(--ff-head);font-size:13px;font-weight:600;color:var(--red);display:flex;align-items:center;gap:7px;}
+.service-body a i{font-size:10px;transition:transform .2s;}
+.service-body a:hover i{transform:translateX(4px);}
+
+/* ============================================================
+   FEATURES STRIP
+   ============================================================ */
+.features-strip{background:var(--navy);padding:36px 0;}
+.features-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;}
+.feature-item{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;color:#dfe4f4;}
+.feature-item i{font-size:24px;color:var(--blue-light);}
+.feature-item span{font-size:13px;font-family:var(--ff-head);letter-spacing:.3px;}
+
+/* ============================================================
+   WHY CHOOSE US
+   ============================================================ */
+.why{padding:100px 0;background:var(--white);}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.why-list{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:10px;}
+.why-item{display:flex;gap:14px;}
+.why-icon{width:46px;height:46px;border-radius:12px;background:var(--off-white);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.why-item h4{font-size:15.5px;margin-bottom:5px;}
+.why-item p{font-size:13px;color:var(--gray);}
+.why-visual{position:relative;}
+.why-visual img{border-radius:var(--radius);box-shadow:var(--shadow-lg);}
+.why-stat-card{
+  position:absolute;bottom:-24px;left:-24px;background:var(--white);border-radius:var(--radius-sm);
+  box-shadow:var(--shadow-md);padding:18px 24px;display:flex;align-items:center;gap:14px;
+}
+.why-stat-card .num{font-family:var(--ff-head);font-size:30px;color:var(--red);}
+.why-stat-card span{font-size:11.5px;color:var(--gray);line-height:1.3;display:block;max-width:120px;}
+
+/* ============================================================
+   PROCESS (numbered — real sequence)
+   ============================================================ */
+.process{padding:100px 0;background:var(--off-white);position:relative;}
+.process-track{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:20px;}
+.process-track::before{
+  content:"";position:absolute;top:34px;left:9%;right:9%;height:3px;
+  background:repeating-linear-gradient(90deg,var(--blue) 0 10px, transparent 10px 18px);
+  z-index:0;
+}
+.process-step{position:relative;z-index:1;text-align:center;padding:0 10px;}
+.process-num{
+  width:68px;height:68px;border-radius:50%;background:var(--navy);color:var(--white);
+  display:flex;align-items:center;justify-content:center;font-family:var(--ff-head);font-size:24px;
+  margin:0 auto 20px;box-shadow:0 0 0 6px var(--off-white),var(--shadow-sm);position:relative;
+}
+.process-step:nth-child(odd) .process-num{background:var(--red);}
+.process-step h4{font-size:16.5px;margin-bottom:8px;}
+.process-step p{font-size:13.5px;color:var(--gray);}
+
+/* ============================================================
+   COVERAGE AREA
+   ============================================================ */
+.coverage{padding:100px 0;background:var(--navy);color:var(--white);position:relative;overflow:hidden;}
+.coverage::after{content:"";position:absolute;inset:0;background:radial-gradient(700px 400px at 15% 20%,rgba(29,111,224,.2),transparent 50%);pointer-events:none;}
+.coverage-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;}
+.coverage h2{color:var(--white);}
+.coverage p.lead{color:#c7cee6;margin-top:14px;margin-bottom:26px;max-width:480px;}
+.area-tags{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px;}
+.area-tag{
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:9px 18px;
+  border-radius:50px;font-size:13.5px;display:flex;align-items:center;gap:8px;
+}
+.area-tag i{color:var(--blue-light);font-size:12px;}
+.coverage-map{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);
+  padding:34px;text-align:center;
+}
+.coverage-map i{font-size:52px;color:var(--red);margin-bottom:16px;}
+.coverage-map h3{color:var(--white);font-size:20px;margin-bottom:8px;}
+.coverage-map p{color:#aab3cf;font-size:13.5px;}
+.coverage-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;}
+.coverage-stats div{background:rgba(255,255,255,.06);border-radius:var(--radius-sm);padding:14px;}
+.coverage-stats b{display:block;font-family:var(--ff-head);color:var(--blue-light);font-size:20px;}
+.coverage-stats span{font-size:11px;color:#aab3cf;text-transform:uppercase;letter-spacing:.4px;}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{padding:100px 0;background:var(--white);}
+.about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:center;}
+.about-img{position:relative;}
+.about-img img{border-radius:var(--radius);box-shadow:var(--shadow-lg);width:100%;}
+.about-badge{
+  position:absolute;bottom:-22px;right:-18px;background:var(--white);border-radius:var(--radius-sm);
+  box-shadow:var(--shadow-md);padding:16px 20px;display:flex;align-items:center;gap:12px;
+}
+.about-badge i{font-size:26px;color:var(--red);}
+.about-badge b{display:block;font-family:var(--ff-head);font-size:14px;}
+.about-badge span{font-size:11.5px;color:var(--gray);}
+.about-checklist{display:flex;flex-direction:column;gap:12px;margin:22px 0 30px;}
+.about-checklist li{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--gray);}
+.about-checklist i{width:22px;height:22px;border-radius:50%;background:rgba(224,38,43,.1);color:var(--red);display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0;}
+.about-btns{display:flex;gap:14px;flex-wrap:wrap;}
+
+/* ============================================================
+   STATS
+   ============================================================ */
+.stats-strip{background:linear-gradient(100deg,var(--navy) 0%,var(--navy-3) 100%);padding:60px 0;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;}
+.stat-item i{font-size:26px;color:var(--red);margin-bottom:12px;}
+.stat-item .num{display:block;font-family:var(--ff-head);font-size:36px;color:var(--white);}
+.stat-item .lbl{font-size:13px;color:#aab3cf;letter-spacing:.3px;}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.reviews{padding:100px 0;background:var(--off-white);}
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.testimonial-card{background:var(--white);border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s;}
+.testimonial-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.testimonial-card .stars{color:var(--gold);font-size:13px;margin-bottom:14px;}
+.testimonial-card p{font-size:14.5px;color:var(--navy);margin-bottom:20px;font-style:italic;}
+.testimonial-author{display:flex;align-items:center;gap:12px;}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--ff-head);font-weight:600;}
+.testimonial-author b{font-size:14px;}
+.testimonial-author span{font-size:12px;color:var(--gray);}
+
+/* ============================================================
+   BRANDS
+   ============================================================ */
+.brands{padding:44px 0;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.brands-row{display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:26px;}
+.brand-logo{display:flex;align-items:center;gap:10px;font-family:var(--ff-head);font-weight:600;font-size:16px;color:var(--gray-light);letter-spacing:1px;}
+.brand-logo i{color:var(--gray-light);}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{padding:100px 0;background:var(--white);}
+.faq-wrap{max-width:800px;margin:0 auto;}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:14px;overflow:hidden;}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;
+  font-family:var(--ff-head);font-size:15.5px;font-weight:500;background:var(--off-white);
+}
+.faq-q i{transition:transform .3s;color:var(--red);}
+.faq-item.open .faq-q i{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-a p{padding:0 24px 20px;font-size:14.5px;color:var(--gray);}
+
+/* ============================================================
+   BOOKING FORM
+   ============================================================ */
+.booking{padding:100px 0;background:var(--off-white);}
+.booking-wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);}
+.booking-side{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-3) 100%);color:var(--white);padding:48px 40px;}
+.booking-side .eyebrow{color:var(--blue-light);}
+.booking-side .eyebrow::before{background:var(--blue-light);}
+.booking-side h2{color:var(--white);font-size:26px;margin-bottom:14px;}
+.booking-side p{color:#c7cee6;font-size:14.5px;margin-bottom:26px;}
+.booking-perks{display:flex;flex-direction:column;gap:14px;}
+.booking-perks li{display:flex;align-items:center;gap:12px;font-size:14px;color:#dfe4f4;}
+.booking-perks i{color:var(--blue-light);width:20px;}
+.booking-form{background:var(--white);padding:44px 40px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.form-field{display:flex;flex-direction:column;gap:7px;}
+.form-field.full{grid-column:1/-1;}
+.form-field label{font-size:12.5px;font-family:var(--ff-head);font-weight:600;color:var(--navy);letter-spacing:.3px;}
+.form-field input,.form-field select,.form-field textarea{
+  border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;font-family:var(--ff-body);
+  font-size:14px;color:var(--ink);background:var(--off-white);transition:border-color .2s,background .2s;
+}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--blue);background:var(--white);outline:none;}
+.form-field textarea{resize:vertical;min-height:90px;}
+.form-submit{grid-column:1/-1;margin-top:6px;}
+.form-msg{grid-column:1/-1;font-size:13.5px;color:var(--blue);display:none;}
+.form-msg.show{display:block;}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{background:var(--navy);color:#aab3cf;padding:70px 0 0;}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:50px;border-bottom:1px solid rgba(255,255,255,.1);}
+.footer-brand img{height:42px;margin-bottom:16px;}
+.footer-brand p{font-size:13.5px;line-height:1.7;margin-bottom:20px;max-width:280px;}
+.socials{display:flex;gap:12px;}
+.socials a{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s;}
+.socials a:hover{background:var(--red);transform:translateY(-3px);}
+footer h4{color:var(--white);font-family:var(--ff-head);font-size:15px;margin-bottom:20px;letter-spacing:.4px;}
+footer ul li{margin-bottom:12px;}
+footer ul a{font-size:13.5px;transition:color .2s;}
+footer ul a:hover{color:var(--blue-light);}
+.footer-contact li{display:flex;align-items:center;gap:10px;font-size:13.5px;}
+.footer-contact i{color:var(--red);width:16px;}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:24px 0;font-size:12.5px;color:#7c86a8;}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.fade-in{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+.delay-1.visible{transition-delay:.1s;}
+.delay-2.visible{transition-delay:.2s;}
+.delay-3.visible{transition-delay:.3s;}
+.delay-4.visible{transition-delay:.4s;}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:1080px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{max-width:460px;margin:0 auto;}
+  .pricing-grid{grid-template-columns:repeat(2,1fr);}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid,.coverage-grid,.about-grid{grid-template-columns:1fr;}
+  .why-visual,.about-img{order:-1;}
+  .process-track{grid-template-columns:repeat(2,1fr);row-gap:44px;}
+  .process-track::before{display:none;}
+  .testimonials-grid{grid-template-columns:1fr 1fr;}
+  .booking-wrap{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:860px){
+  .mainnav{position:fixed;top:0;right:-100%;height:100vh;width:78%;max-width:320px;background:var(--white);
+    box-shadow:-8px 0 30px rgba(0,0,0,.14);transition:right .35s ease;padding:100px 30px 30px;z-index:300;}
+  .mainnav.open{right:0;}
+  .mainnav ul{flex-direction:column;gap:6px;}
+  .mainnav a{display:block;padding:14px 4px;border-bottom:1px solid var(--border);}
+  .menu-toggle{display:flex;}
+  .header-cta .txt{display:none;}
+  .info-grid{grid-template-columns:repeat(2,1fr);}
+  .info-item{border-right:none;border-bottom:1px solid var(--border);}
+  .trust-row{flex-direction:column;align-items:flex-start;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .services-grid{grid-template-columns:1fr;}
+  .features-grid{grid-template-columns:repeat(2,1fr);row-gap:24px;}
+  .why-list{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr 1fr;row-gap:30px;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .process-track{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .form-grid{grid-template-columns:1fr;}
+  .cta-banner .container{flex-direction:column;align-items:flex-start;}
+  .coverage-stats{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .container{padding:0 18px;}
+  .btn{width:100%;}
+  .hero-btns{flex-direction:column;}
+  .hero-btns .btn{width:100%;}
+  .about-btns{flex-direction:column;}
+  .about-btns .btn{width:100%;}
+  .gas-safe-float{width:70px;height:70px;top:-12px;right:-8px;}
+  .gas-safe-float img{width:32px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     TOP BAR
+     ============================================================ -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-row">
+      <div class="topbar-item"><i class="fa-solid fa-clock"></i> 24/7 Emergency Gas Services</div>
+      <div class="topbar-item"><i class="fa-solid fa-shield-halved"></i> Gas Safe Registered Engineers</div>
+      <div class="topbar-item stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> 5.0 Rated by our Customers</div>
+    </div>
+    <div class="topbar-socials">
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="Google Reviews"><i class="fa-brands fa-google"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header id="siteHeader">
+  <div class="container navwrap">
+    <a href="#home" class="logo">
+      <img src="logo-banner.jpg" alt="Pro Flame Gas Services logo">
+    </a>
+    <nav class="mainnav" id="mainnav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#areas">Coverage</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#book">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-right">
+      <a href="tel:07833722922" class="header-cta">
+        <div class="pulse-icon"><i class="fa-solid fa-phone"></i></div>
+        <div class="txt"><b>07833 722922</b><span>Emergency: 24/7</span></div>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text fade-in visible">
+        <div class="hero-badge-row">
+          <div class="mini-badge"><i class="fa-solid fa-shield-halved"></i> Gas Safe Registered</div>
+          <div class="mini-badge"><i class="fa-solid fa-award"></i> OFTEC Registered</div>
+          <div class="mini-badge"><i class="fa-solid fa-star"></i> 1000+ 5-Star Reviews</div>
+        </div>
+        <h1>A Gas Leak, A Broken Boiler, A Cold House.<span>None of it Can Wait — Neither Do We.</span></h1>
+        <p class="lead">Pro Flame Gas Services are Gas Safe and OFTEC registered engineers covering the South West — on call 24 hours a day for the moments that genuinely cannot wait.</p>
+        <ul class="hero-checklist">
+          <li><i class="fa-solid fa-check"></i> Gas Safe &amp; OFTEC registered — checked, not just claimed</li>
+          <li><i class="fa-solid fa-check"></i> Upfront, fixed pricing before we start any work</li>
+          <li><i class="fa-solid fa-check"></i> 1 hour average response for genuine emergencies</li>
+        </ul>
+        <div class="hero-btns">
+          <a href="#services" class="btn btn-red">Our Services <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#book" class="btn btn-outline">Book an Engineer</a>
+        </div>
+      </div>
+      <div class="hero-visual fade-in delay-2 visible">
+        <div class="hero-card">
+          <div class="gas-safe-float">
+            <img src="gas-safe-badge.jpg" alt="Gas Safe badge">
+            <span>CERTIFIED</span>
+          </div>
+          <img src="logo-main.jpg" alt="Pro Flame Gas Services South West">
+          <div class="dial-row">
+            <div class="dial-box"><b>58 Min</b><span>Avg. Response</span></div>
+            <div class="dial-box"><b>25 Yrs</b><span>Experience</span></div>
+            <div class="dial-box"><b>1 Yr</b><span>Work Warranty</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-strip">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-item"><div class="info-icon"><i class="fa-solid fa-stopwatch"></i></div><div><b>1 Hr</b><span>Fastest Response</span></div></div>
+        <div class="info-item"><div class="info-icon"><i class="fa-solid fa-location-dot"></i></div><div><b>SW</b><span>South West Coverage</span></div></div>
+        <div class="info-item"><div class="info-icon"><i class="fa-solid fa-fire"></i></div><div><b>Oil / LPG</b><span>&amp; Mains Gas</span></div></div>
+        <div class="info-item"><div class="info-icon"><i class="fa-solid fa-road"></i></div><div><b>M4 / M5</b><span>HQ on the Interchange</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA BANNER
+     ============================================================ -->
+<div class="cta-banner" id="call-now">
+  <div class="container">
+    <div>
+      <h3>Smell Gas or Lost Your Heating? Don't Wait it Out.</h3>
+      <p>Every hour without a proper check is a risk not worth taking. Call now — we're already close by.</p>
+    </div>
+    <a href="tel:07833722922" class="cta-call">
+      <div class="pulse-icon"><i class="fa-solid fa-phone"></i></div>
+      <div><b>07833 722922</b><span>Call / WhatsApp 24/7</span></div>
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================
+     TRUST / CERTIFICATION STRIP
+     ============================================================ -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-row fade-in visible">
+      <div class="trust-label">Registered &amp; Verified By</div>
+      <div class="trust-logos">
+        <div class="t-item"><img src="gas-safe-badge.jpg" alt="Gas Safe Register"><span>Gas Safe Register</span></div>
+        <div class="t-item"><img src="oftec-badge.jpg" alt="OFTEC Registered Business"><span>OFTEC Registered</span></div>
+        <div class="t-item"><i class="fa-solid fa-star" style="color:var(--gold);"></i><span>5.0 on Google Reviews</span></div>
+        <div class="t-item"><i class="fa-solid fa-circle-check" style="color:var(--blue);"></i><span>Fully Insured Engineers</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PRICING / RESPONSE TIERS
+     ============================================================ -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-head center fade-in visible">
+      <div class="eyebrow center">Pick Your Response Time</div>
+      <h2 class="section-title">Fast, Transparent &amp; Guaranteed</h2>
+      <p class="section-sub">No call-out surprises. You know the price before an engineer ever knocks on your door.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card featured fade-in visible">
+        <div class="price-tag">£130 inc VAT</div>
+        <div class="price-step">01 · Emergency</div>
+        <h3>1 Hr / Same Day / 24 Hr</h3>
+        <p>Burst pipe, no heat, gas smell — an engineer is on the way within the hour, day or night.</p>
+        <a href="#book">Book emergency callout <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="price-card fade-in delay-1 visible">
+        <div class="price-tag">£110 inc VAT</div>
+        <div class="price-step">02 · Next Day</div>
+        <h3>8AM – 8PM, 7 Days</h3>
+        <p>Not urgent, but you don't want to wait a week. A fixed next-day slot, weekends included.</p>
+        <a href="#book">Book next-day response <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="price-card fade-in delay-2 visible">
+        <div class="price-tag">£95 inc VAT</div>
+        <div class="price-step">03 · Routine</div>
+        <h3>Annual Service &amp; Safety Check</h3>
+        <p>A full safety check and service, scheduled within 3–5 days. Keeps your warranty valid.</p>
+        <a href="#book">Book a service <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="price-card fade-in delay-3 visible">
+        <div class="price-tag">From £65 + VAT</div>
+        <div class="price-step">04 · VIP / OAP</div>
+        <h3>Landlord, VIP &amp; OAP Rates</h3>
+        <p>Cylinder servicing and reduced-rate visits for VIP customers, landlords and OAPs.</p>
+        <a href="#book">Check eligibility <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section id="services" class="services">
+  <div class="container">
+    <div class="section-head center fade-in visible">
+      <div class="eyebrow center">Our Services</div>
+      <h2 class="section-title">Complete Gas, Heating &amp; Plumbing Solutions</h2>
+      <p class="section-sub">One engineer, one van, everything sorted — from a dripping tap to a full boiler replacement.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in visible">
+        <div class="service-img"><i class="fa-solid fa-fire-burner"></i></div>
+        <div class="service-body"><h4>Boiler Installation</h4><p>Energy efficient boiler installations from trusted Gas Safe engineers.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+      <div class="service-card fade-in delay-1 visible">
+        <div class="service-img"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <div class="service-body"><h4>Boiler Servicing</h4><p>Keep your boiler running safely and efficiently with annual servicing.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+      <div class="service-card fade-in delay-2 visible">
+        <div class="service-img"><i class="fa-solid fa-temperature-three-quarters"></i></div>
+        <div class="service-body"><h4>Central Heating</h4><p>Installation, repair and maintenance of central heating systems.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+      <div class="service-card fade-in delay-3 visible">
+        <div class="service-img"><i class="fa-solid fa-faucet-drip"></i></div>
+        <div class="service-body"><h4>Plumbing Services</h4><p>From leaks to full installations, we've got you covered.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+      <div class="service-card fade-in visible">
+        <div class="service-img"><i class="fa-solid fa-kitchen-set"></i></div>
+        <div class="service-body"><h4>Gas Cooker Installation</h4><p>Safe installation of gas cookers and hobs by qualified engineers.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+      <div class="service-card fade-in delay-1 visible">
+        <div class="service-img"><i class="fa-solid fa-file-shield"></i></div>
+        <div class="service-body"><h4>Landlord Safety Certificates</h4><p>CP12 certificates for landlords – fast, reliable and fully compliant.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+      <div class="service-card fade-in delay-2 visible">
+        <div class="service-img"><i class="fa-solid fa-fire-flame-simple"></i></div>
+        <div class="service-body"><h4>Gas Fire Installation</h4><p>Professional installation of gas fires for warmth and comfort.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+      <div class="service-card fade-in delay-3 visible">
+        <div class="service-img"><i class="fa-solid fa-water"></i></div>
+        <div class="service-body"><h4>Powerflushing</h4><p>Improve your heating efficiency with our powerflushing service.</p><a href="#book">Learn More <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURES STRIP
+     ============================================================ -->
+<div class="features-strip">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-item fade-in visible"><i class="fa-solid fa-clock"></i><span>24/7 Emergency Service</span></div>
+      <div class="feature-item fade-in delay-1 visible"><i class="fa-solid fa-certificate"></i><span>Gas Safe Registered</span></div>
+      <div class="feature-item fade-in delay-2 visible"><i class="fa-solid fa-bolt"></i><span>Fast Response</span></div>
+      <div class="feature-item fade-in delay-3 visible"><i class="fa-solid fa-tags"></i><span>Upfront Pricing</span></div>
+      <div class="feature-item fade-in delay-4 visible"><i class="fa-solid fa-user-gear"></i><span>Plumbing &amp; Gas Experts</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     WHY CHOOSE US
+     ============================================================ -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-visual fade-in visible">
+        <img src="van-photo.jpg" alt="Pro Flame Gas Services van">
+        <div class="why-stat-card">
+          <span class="num">1000+</span>
+          <span>Jobs completed across the South West</span>
+        </div>
+      </div>
+      <div class="why-content fade-in delay-1 visible">
+        <div class="eyebrow">Why Choose Us</div>
+        <h2 class="section-title">Because a Cold House Isn't a Risk Worth Taking</h2>
+        <p class="section-sub">Every engineer we send is Gas Safe registered and ID checked — the same standard we'd want in our own home.</p>
+        <div class="why-list">
+          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div><div><h4>Fully Certified</h4><p>Gas Safe &amp; OFTEC registered on every visit.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-tags"></i></div><div><h4>No Hidden Fees</h4><p>The price we quote is the price you pay.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-bolt"></i></div><div><h4>1 Hour Response</h4><p>For genuine emergencies, day or night.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fa-solid fa-award"></i></div><div><h4>Work Guaranteed</h4><p>A full 1 year warranty on all completed work.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROCESS
+     ============================================================ -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-head center fade-in visible">
+      <div class="eyebrow center">How It Works</div>
+      <h2 class="section-title">From Call to Fixed, in Four Steps</h2>
+    </div>
+    <div class="process-track">
+      <div class="process-step fade-in visible">
+        <div class="process-num">1</div>
+        <h4>Call or Book Online</h4>
+        <p>Tell us what's wrong — call, WhatsApp or fill in the form below.</p>
+      </div>
+      <div class="process-step fade-in delay-1 visible">
+        <div class="process-num">2</div>
+        <h4>Get a Fixed Price</h4>
+        <p>We confirm your slot and quote upfront, before any work starts.</p>
+      </div>
+      <div class="process-step fade-in delay-2 visible">
+        <div class="process-num">3</div>
+        <h4>Engineer Arrives</h4>
+        <p>A Gas Safe registered engineer arrives in your chosen window.</p>
+      </div>
+      <div class="process-step fade-in delay-3 visible">
+        <div class="process-num">4</div>
+        <h4>Job Done &amp; Guaranteed</h4>
+        <p>Work completed, tested, and backed by a 1 year warranty.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     COVERAGE AREA
+     ============================================================ -->
+<section class="coverage" id="areas">
+  <div class="container">
+    <div class="coverage-grid">
+      <div class="coverage-text fade-in visible">
+        <div class="eyebrow">Areas We Cover</div>
+        <h2 class="section-title">Based on the M4 / M5 Interchange, Covering the Whole South West</h2>
+        <p class="lead">Our Filton HQ sits right on the interchange, which means we're rarely far from wherever you are.</p>
+        <div class="area-tags">
+          <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Bristol</div>
+          <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Bath</div>
+          <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Filton</div>
+          <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Gloucester</div>
+          <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Swindon</div>
+          <div class="area-tag"><i class="fa-solid fa-location-dot"></i> Weston-super-Mare</div>
+        </div>
+        <a href="#book" class="btn btn-red">Check My Postcode <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="coverage-map fade-in delay-1 visible">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <h3>South West Coverage</h3>
+        <p>Emergency, next-day and routine appointments across the region.</p>
+        <div class="coverage-stats">
+          <div><b>60 Min</b><span>Avg Arrival</span></div>
+          <div><b>7 Days</b><span>A Week</span></div>
+          <div><b>25 Yrs</b><span>Local Experience</span></div>
+          <div><b>100%</b><span>Gas Safe Checked</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img fade-in visible">
+        <img src="logo-main.jpg" alt="Pro Flame Gas Services">
+        <div class="about-badge">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div><b>Gas Safe Reg.</b><span>Checked engineers</span></div>
+        </div>
+      </div>
+      <div class="about-content fade-in delay-1 visible">
+        <div class="eyebrow">About Us</div>
+        <h2 class="section-title">Your Local Gas &amp; Plumbing Experts</h2>
+        <p class="section-sub">Pro Flame Gas Services is a trusted local business with years of experience in the heating, plumbing and gas industry. We pride ourselves on delivering safe, reliable and high-quality workmanship — the kind you'd be happy to recommend to a neighbour.</p>
+        <ul class="about-checklist">
+          <li><i class="fa-solid fa-check"></i> Fully Qualified &amp; Insured Engineers</li>
+          <li><i class="fa-solid fa-check"></i> Workmanship Guaranteed for 1 Year</li>
+          <li><i class="fa-solid fa-check"></i> Customer Satisfaction Our Priority</li>
+        </ul>
+        <div class="about-btns">
+          <a href="#book" class="btn btn-red">Get a Free Quote</a>
+          <a href="#reviews" class="btn btn-navy">Read Our Reviews</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-in visible"><i class="fa-solid fa-star"></i><span class="num" data-count="1000" data-suffix="+">0</span><div class="lbl">5-Star Reviews</div></div>
+      <div class="stat-item fade-in delay-1 visible"><i class="fa-solid fa-thumbs-up"></i><span class="num" data-count="98" data-suffix="%">0</span><div class="lbl">First-Time Fix</div></div>
+      <div class="stat-item fade-in delay-2 visible"><i class="fa-solid fa-shield"></i><span class="num" data-count="1" data-suffix="Yr">0</span><div class="lbl">Warranty On All Work</div></div>
+      <div class="stat-item fade-in delay-3 visible"><i class="fa-solid fa-fire-flame-curved"></i><span class="num" data-count="25" data-suffix="Yrs">0</span><div class="lbl">Plumbing Experience</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section id="reviews" class="reviews">
+  <div class="container">
+    <div class="section-head center fade-in visible">
+      <div class="eyebrow center">Trusted by Our Customers</div>
+      <h2 class="section-title">What Our Customers Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in visible">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Brilliant service! Our boiler broke down late at night and Pro Flame came out straight away. Highly recommend."</p>
+        <div class="testimonial-author"><div class="avatar">S</div><div><b>Sarah J.</b><br><span>Homeowner</span></div></div>
+      </div>
+      <div class="testimonial-card fade-in delay-1 visible">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Professional, punctual and tidy work. They installed our new boiler quickly and explained everything."</p>
+        <div class="testimonial-author"><div class="avatar">M</div><div><b>Mark R.</b><br><span>Homeowner</span></div></div>
+      </div>
+      <div class="testimonial-card fade-in delay-2 visible">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Reliable engineers and great prices. We use them for all our landlord certificates."</p>
+        <div class="testimonial-author"><div class="avatar">D</div><div><b>David L.</b><br><span>Landlord</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BRANDS
+     ============================================================ -->
+<div class="brands">
+  <div class="container">
+    <div class="brands-row fade-in visible">
+      <div class="brand-logo"><i class="fa-solid fa-fire"></i>WORCESTER</div>
+      <div class="brand-logo"><i class="fa-solid fa-check-double"></i>VAILLANT</div>
+      <div class="brand-logo">Glow·worm</div>
+      <div class="brand-logo">BAXI</div>
+      <div class="brand-logo"><i class="fa-solid fa-circle-half-stroke"></i>IDEAL</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head center fade-in visible">
+      <div class="eyebrow center">Common Questions</div>
+      <h2 class="section-title">Before You Call, a Few Things to Know</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item fade-in visible open">
+        <div class="faq-q">How fast can an engineer actually get to me? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>For genuine emergencies — no heat, no hot water, a suspected gas leak — our average arrival time is under 60 minutes, 24 hours a day. Next-day and routine visits are booked to a fixed window so you're never left guessing.</p></div>
+      </div>
+      <div class="faq-item fade-in delay-1 visible">
+        <div class="faq-q">Will I know the price before you start? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Yes. Every job is quoted upfront based on the response tier you choose, before any work begins. There are no surprise call-out fees added afterwards.</p></div>
+      </div>
+      <div class="faq-item fade-in delay-2 visible">
+        <div class="faq-q">Are your engineers actually Gas Safe registered? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Every engineer we send is Gas Safe registered and ID checked, and our business is also OFTEC registered for oil-fired systems. You can ask to see an engineer's ID card on arrival.</p></div>
+      </div>
+      <div class="faq-item fade-in delay-3 visible">
+        <div class="faq-q">Do you offer reduced rates for landlords or OAPs? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>Yes — we offer VIP and OAP rates from £65+VAT, along with landlord safety certificates (CP12) and cylinder servicing at a reduced rate. Ask when you book.</p></div>
+      </div>
+      <div class="faq-item fade-in visible">
+        <div class="faq-q">What if I'm not satisfied with the work? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a"><p>All completed work is backed by a 1 year warranty. If something isn't right, call us and we'll come back to put it right at no extra cost.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BOOKING / QUERY FORM
+     ============================================================ -->
+<section class="booking" id="book">
+  <div class="container">
+    <div class="section-head center fade-in visible">
+      <div class="eyebrow center">Get in Touch</div>
+      <h2 class="section-title">Request a Callout Online</h2>
+    </div>
+    <div class="booking-wrap fade-in visible">
+      <div class="booking-side">
+        <div class="eyebrow">Why Book With Us</div>
+        <h2>We'll Get Back to You Fast</h2>
+        <p>Fill in the form and one of our Gas Safe registered engineers will confirm your appointment. For anything urgent, call us directly on 07833 722922.</p>
+        <ul class="booking-perks">
+          <li><i class="fa-solid fa-bolt"></i> Reply within 1 hour, 24/7</li>
+          <li><i class="fa-solid fa-shield-halved"></i> Gas Safe registered engineers</li>
+          <li><i class="fa-solid fa-tags"></i> Upfront, honest pricing</li>
+          <li><i class="fa-solid fa-star"></i> Rated 5.0 by our customers</li>
+        </ul>
+      </div>
+      <form class="booking-form" id="bookingForm">
+        <div class="form-grid">
+          <div class="form-field"><label>First Name</label><input type="text" name="firstName" placeholder="John" required></div>
+          <div class="form-field"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" required></div>
+          <div class="form-field"><label>Phone Number</label><input type="tel" name="phone" placeholder="07xxx xxxxxx" required></div>
+          <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required></div>
+          <div class="form-field"><label>Postcode</label><input type="text" name="postcode" placeholder="BS34 xxx" required></div>
+          <div class="form-field"><label>House/Flat Number</label><input type="text" name="houseNumber" placeholder="e.g. 12"></div>
+          <div class="form-field">
+            <label>Service</label>
+            <select name="service">
+              <option value="">Select service</option>
+              <option>Emergency Callout</option>
+              <option>Boiler Installation</option>
+              <option>Boiler Servicing</option>
+              <option>Central Heating</option>
+              <option>Plumbing Services</option>
+              <option>Gas Cooker Installation</option>
+              <option>Landlord Safety Certificate</option>
+              <option>Gas Fire Installation</option>
+              <option>Powerflushing</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Fuel Type</label>
+            <select name="fuelType">
+              <option>Natural Gas</option>
+              <option>LPG</option>
+              <option>Oil</option>
+            </select>
+          </div>
+          <div class="form-field"><label>Appliance Manufacturer</label><input type="text" name="manufacturer" placeholder="Worcester Bosch, Vaillant, Baxi..."></div>
+          <div class="form-field"><label>Appliance Model</label><input type="text" name="model" placeholder="Greenstar, EcoTec, DuoTec..."></div>
+          <div class="form-field full"><label>Description of Fault (if faulty)</label><textarea name="fault" placeholder="No hot water, F75 fault code etc."></textarea></div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-red btn-block">Submit Query / Book Appointment <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <div class="form-msg" id="formMsg"><i class="fa-solid fa-circle-check"></i> Thanks — your request has been noted. We'll call you shortly to confirm.</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA BANNER (footer)
+     ============================================================ -->
+<div class="cta-banner" id="call-now-footer">
+  <div class="container">
+    <div>
+      <h3>Need an Emergency Gas or Plumbing Engineer?</h3>
+      <p>We're available 24/7 for all your emergency gas and plumbing needs.</p>
+    </div>
+    <a href="tel:07833722922" class="cta-call">
+      <div class="pulse-icon"><i class="fa-solid fa-phone"></i></div>
+      <div><b>07833 722922</b><span>Call / WhatsApp 24/7</span></div>
+    </a>
+  </div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo-banner.jpg" alt="Pro Flame Gas Services logo">
+        <p>Providing professional gas, heating and plumbing services that you can rely on, day or night, across the South West.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Google Reviews"><i class="fa-brands fa-google"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#areas">Areas We Cover</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#book">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="#services">Boiler Installation</a></li>
+          <li><a href="#services">Boiler Servicing</a></li>
+          <li><a href="#services">Central Heating</a></li>
+          <li><a href="#services">Plumbing Services</a></li>
+          <li><a href="#services">Landlord Certificates</a></li>
+          <li><a href="#services">Powerflushing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul class="footer-contact">
+          <li><i class="fa-solid fa-phone"></i> 07833 722922</li>
+          <li><i class="fa-solid fa-envelope"></i> info@proflamegas.co.uk</li>
+          <li><i class="fa-solid fa-location-dot"></i> Filton, South West</li>
+          <li><i class="fa-solid fa-clock"></i> 24/7 Emergency Service</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Pro Flame Gas Services. All Rights Reserved.</span>
+      <span>Gas Safe &amp; OFTEC Registered</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   MOBILE NAV TOGGLE
+   ============================================================ */
+const menuToggle = document.getElementById('menuToggle');
+const mainnav = document.getElementById('mainnav');
+menuToggle.addEventListener('click', () => mainnav.classList.toggle('open'));
+mainnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mainnav.classList.remove('open')));
+
+/* ============================================================
+   HEADER SHADOW ON SCROLL
+   ============================================================ */
+const headerEl = document.getElementById('siteHeader');
+window.addEventListener('scroll', () => {
+  headerEl.style.boxShadow = window.scrollY > 20
+    ? '0 6px 24px rgba(10,17,40,0.16)'
+    : '0 4px 16px rgba(10,17,40,0.08)';
+});
+
+/* ============================================================
+   SCROLL FADE-IN
+   ============================================================ */
+const faders = document.querySelectorAll('.fade-in');
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+faders.forEach(el => appearOnScroll.observe(el));
+
+/* ============================================================
+   ANIMATED COUNTERS
+   ============================================================ */
+const counters = document.querySelectorAll('.num[data-count]');
+const counterObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    let current = 0;
+    const step = Math.max(1, Math.ceil(target / 60));
+    const tick = () => {
+      current += step;
+      if (current >= target) current = target;
+      el.textContent = current + suffix;
+      if (current < target) requestAnimationFrame(tick);
+    };
+    tick();
+    observer.unobserve(el);
+  });
+}, { threshold: 0.4 });
+counters.forEach(el => counterObserver.observe(el));
+
+/* ============================================================
+   FAQ ACCORDION
+   ============================================================ */
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  if (item.classList.contains('open')) a.style.maxHeight = a.scrollHeight + 'px';
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(other => {
+      other.classList.remove('open');
+      other.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+    }
+  });
+});
+
+/* ============================================================
+   BOOKING FORM SUBMIT (client-side confirmation)
+   ============================================================ */
+const bookingForm = document.getElementById('bookingForm');
+const formMsg = document.getElementById('formMsg');
+bookingForm.addEventListener('submit', function (e) {
+  e.preventDefault();
+  if (!bookingForm.checkValidity()) {
+    bookingForm.reportValidity();
+    return;
+  }
+  formMsg.classList.add('show');
+  formMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  bookingForm.querySelectorAll('input, textarea').forEach(f => f.value = '');
+  bookingForm.querySelectorAll('select').forEach(s => s.selectedIndex = 0);
+});
+
+/* ============================================================
+   IMAGE FALLBACK — avoid a blank box if a photo fails to load
+   ============================================================ */
+document.querySelectorAll('img').forEach((img) => {
+  img.addEventListener('error', function handler() {
+    img.removeEventListener('error', handler);
+    img.style.background = '#e4e7f2';
+  }, { once: true });
+});
+</script>
+
+</body>
+</html>
